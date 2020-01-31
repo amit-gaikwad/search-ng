@@ -1,0 +1,25 @@
+<div>
+  <div>
+    <input [(ngModel)]="newItemName" /><button (click)="addItem()">
+      Submit
+    </button>
+  </div>
+  <div>
+    Unpacked Items
+    <div *ngFor="let item of unPackedItems">
+      <app-item
+        [item]="item"
+        (myEventListener)="changeChecked($event)"
+      ></app-item>
+    </div>
+  </div>
+  <div>
+    packed Items
+    <div *ngFor="let item of packedItems">
+      <app-item
+        [item]="item"
+        (myEventListener)="changeChecked($event)"
+      ></app-item>
+    </div>
+  </div>
+</div>
